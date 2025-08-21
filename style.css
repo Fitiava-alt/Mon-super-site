@@ -1,0 +1,104 @@
+:root {
+    --couleur-primaire: #4CAF50;
+    --couleur-secondaire: #2196F3;
+    --couleur-fond: #f7f7f7;
+    --couleur-texte: #333;
+    --police-principale: Arial, sans-serif;
+    --marge-standard: 20px;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: var(--police-principale);
+    background-color: var(--couleur-fond);
+    color: var(--couleur-texte);
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--marge-standard) var(--marge-standard);
+    background-color: var(--couleur-primaire);
+    color: white;
+  }
+   .nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: var(--marge-standard);
+    padding: var(--marge-standard);
+  }
+  .sidebar {
+    background: linear-gradient(135deg, #3a87ad, #3a7fad);
+    color: white;
+    padding: var(--marge-standard);
+    border-radius: 8px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--marge-standard);
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+   .grid-item {
+    background-color: var(--couleur-secondaire);
+    color: white;
+    height: 100px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+  .about {
+    background: white;
+    padding: var(--marge-standard);
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  .footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #222;
+    color: white;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 768px) {
+    .main-grid {
+      grid-template-columns: 1fr;
+    }
+     .sidebar {
+      order: 2;
+    }
+     .content {
+      order: 1;
+    }
+     .grid-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+   @media (max-width: 480px){ 
+    .nav {
+      display: none;
+    }
+     .grid-container {
+      grid-template-columns: 1fr;
+    }
+     .sidebar {
+      padding: 15px 10px;
+    }
+  }
+  
+  
